@@ -1,0 +1,33 @@
+.img{
+    height: 50px;
+    width: 50px;
+    background-size: cover;
+    border-radius: 50px;
+}
+.container{
+    position: absolute;
+    top:50px;
+    bottom: 10px;
+    left:2px;
+    right: 0;
+
+}
+.sidewidth{
+    background-color: #284255;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mat-list-item:hover{
+    background-color: #2374bb;
+    color: white;
+}
+.mat-list-item{
+    background-color: #284255;
+    color: white;
+}
+.myclass{
+    background-color: #2374bb;
+    color: white;
+}

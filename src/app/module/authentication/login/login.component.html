@@ -1,0 +1,22 @@
+<div class="example_box" fxLayoutAlign="centre centre">
+    <mat-card class="card" fxLayoutAlign="centre centre">
+        <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="centre">
+            <div style="font-weight: 500;padding-left: 50px;" fxLayoutAlign="centre">SLSV BRICKS</div>
+            <form [formGroup]="loginForm">
+                <div fxLayout="column">
+                    <mat-form-field appearance="outline" class="form">
+                        <mat-label>UserName</mat-label>
+                        <input matInput placeholder="UserName" type="text" formControlName="userName">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="form">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Password" type="password" formControlName="password">
+                    </mat-form-field>
+                    <mat-error>{{errMsg}}</mat-error>
+                    <button mat-raised-button color="primary" [disabled]="!loginForm.valid"
+                        (click)="login()">LOGIN</button>
+                </div>
+            </form>
+        </div>
+    </mat-card>
+</div>

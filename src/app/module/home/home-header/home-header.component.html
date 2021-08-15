@@ -1,0 +1,58 @@
+<mat-toolbar style="background-color: blueviolet;color: white;">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon (click)="sideNavToggle()">menu</mat-icon>
+    </button>
+    <span>SLSV BRICKS</span>
+    <div fxLayoutAlign="end" fxLayout="row" fxLayoutGap="10px" style="margin-left: auto;">
+        <span fxLayout="column">
+        <span style="font-size: 16px;margin-bottom: -10px;">{{'UserName'}}</span>
+        <span style="text-decoration: underline;color: white;font-size: 14px;" (click)="logout()">LOGOUT</span>
+    </span>
+    <img mat-card-avatar src="./assets/images/user.png" class="img" alt=""  >
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container class="container">
+      <mat-sidenav #drawer [mode]="(screenWidth>800)?'side':'over'" [opened]="screenWidth>800" 
+         class='sidewidth' [disableClose]="true">
+          <mat-nav-list>
+            <mat-list-item [ngClass]="{'myclass':selected==='home'}" (click)="goto('home')">
+              <span>HOME</span>
+            </mat-list-item>
+          </mat-nav-list>
+          <mat-nav-list>
+            <mat-list-item [ngClass]="{'myclass':selected==='production'}" (click)="goto('production')">
+              <span>PRODUCTION</span>
+            </mat-list-item>
+          </mat-nav-list>
+          <mat-nav-list>
+            <mat-list-item [ngClass]="{'myclass':selected==='delivery'}" (click)="goto('delivery')">
+              <span>DELIVERY</span>
+            </mat-list-item>
+          </mat-nav-list>
+          <mat-nav-list>
+            <mat-list-item [ngClass]="{'myclass':selected==='stocks'}" (click)="goto('stocks')">
+              <span>STOCKS</span>
+            </mat-list-item>
+          </mat-nav-list>
+          <mat-nav-list>
+            <mat-list-item [ngClass]="{'myclass':selected==='payments'}" (click)="goto('payments')">
+              <span>PAYMENTS</span>
+            </mat-list-item>
+          </mat-nav-list>
+          <mat-nav-list>
+            <mat-list-item [ngClass]="{'myclass':selected==='bricks'}" (click)="goto('bricks')">
+              <span>BRICKS</span>
+            </mat-list-item>
+          </mat-nav-list>
+          <mat-nav-list>
+            <mat-list-item [ngClass]="{'myclass':selected==='employee'}" (click)="goto('employee')">
+              <span>EMPLOYEE DETAILS</span>
+            </mat-list-item>
+          </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <div>
+          <router-outlet></router-outlet>
+        </div>
+      </mat-sidenav-content>
+  </mat-sidenav-container>
